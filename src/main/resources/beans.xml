@@ -18,4 +18,9 @@
         <constructor-arg ref="smsMessageSender" />
         <constructor-arg ref="emailMessageSender" />
     </bean>
+
+    <bean id="messageSetterService" class="com.nhnacademy.edu.springframework.messagesender.service.MessageSetterService">
+        <property name="smsMessageSender" ref="smsMessageSender" />
+        <property name="emailMessageSender" ref="emailMessageSender" />
+    </bean>
 </beans>
