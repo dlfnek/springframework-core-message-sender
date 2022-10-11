@@ -7,10 +7,15 @@
         default-destroy-method="destroy">
 
 
-    <bean id="smsMessageSender" class="com.nhnacademy.edu.springframework.messagesender.service.SmsMessageSender" scope="prototype">
+    <bean id="smsMessageSender" class="com.nhnacademy.edu.springframework.messagesender.service.SmsMessageSender">
     </bean>
 
     <bean id="emailMessageSender" class="com.nhnacademy.edu.springframework.messagesender.service.EmailMessageSender">
     </bean>
 
+<!--    스프링 빈끼리만 조립해주는 역할-->
+    <bean id="messageSendService" class="com.nhnacademy.edu.springframework.messagesender.service.MessageSendService">
+        <constructor-arg ref="smsMessageSender" />
+        <constructor-arg ref="emailMessageSender" />
+    </bean>
 </beans>
