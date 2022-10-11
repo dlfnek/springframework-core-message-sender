@@ -14,13 +14,16 @@
     </bean>
 
 <!--    스프링 빈끼리만 조립해주는 역할-->
-    <bean id="messageSendService" class="com.nhnacademy.edu.springframework.messagesender.service.MessageSendService">
-        <constructor-arg ref="smsMessageSender" />
-        <constructor-arg ref="emailMessageSender" />
-    </bean>
+<!--    <bean id="messageSendService" class="com.nhnacademy.edu.springframework.messagesender.service.MessageSendService">-->
+<!--        <constructor-arg ref="smsMessageSender" />-->
+<!--        <constructor-arg ref="emailMessageSender" />-->
+<!--    </bean>-->
 
-    <bean id="messageSetterService" class="com.nhnacademy.edu.springframework.messagesender.service.MessageSetterService">
-        <property name="smsMessageSender" ref="smsMessageSender" />
-        <property name="emailMessageSender" ref="emailMessageSender" />
+<!--    <bean id="messageSetterService" class="com.nhnacademy.edu.springframework.messagesender.service.MessageSetterService">-->
+<!--        <property name="smsMessageSender" ref="smsMessageSender" />-->
+<!--        <property name="emailMessageSender" ref="emailMessageSender" />-->
+<!--    </bean>-->
+
+    <bean id="messageSetterService" class="com.nhnacademy.edu.springframework.messagesender.service.MessageSetterService" autowire="byName">
     </bean>
 </beans>
