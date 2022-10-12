@@ -12,7 +12,7 @@ public class EmailMessageSender implements MessageSender {
         System.out.println("init method called in EmailMessageSender");
     }
 
-    public void destroy() {
+    public void shutdown() {
         System.out.println("destroy method called in EmailMessageSender");
     }
 

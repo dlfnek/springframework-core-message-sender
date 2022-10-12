@@ -4,14 +4,13 @@ import com.nhnacademy.edu.springframework.messagesender.Annotation.Sms;
 import com.nhnacademy.edu.springframework.messagesender.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 
 public class MessageService {
 
     private final MessageSender messageSender;
 
-    @Autowired
-    public MessageService(@Sms(dummy = true) MessageSender messageSender) {
-        System.out.println("-----------construct call!!------------");
+    public MessageService(MessageSender messageSender) {
         this.messageSender = messageSender;
     }
 

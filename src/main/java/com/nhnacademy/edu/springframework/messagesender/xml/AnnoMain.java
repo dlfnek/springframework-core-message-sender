@@ -3,7 +3,7 @@ package com.nhnacademy.edu.springframework.messagesender.xml;
 import com.nhnacademy.edu.springframework.messagesender.service.MessageService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class AnnotationMain {
+public class AnnoMain {
 
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");

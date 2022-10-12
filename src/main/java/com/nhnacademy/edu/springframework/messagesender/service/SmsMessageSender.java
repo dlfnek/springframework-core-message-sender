@@ -12,7 +12,7 @@ public class SmsMessageSender implements MessageSender {
         System.out.println("init method called in SmsMessageSender");
     }
 
-    public void destroy() {
+    public void close() {
         System.out.println("destroy method called in SmsMessageSender");
     }
 
