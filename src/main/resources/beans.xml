@@ -14,11 +14,14 @@
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />
 
     <bean id="smsMessageSender" class="com.nhnacademy.edu.springframework.messagesender.service.SmsMessageSender">
+        <qualifier type="com.nhnacademy.edu.springframework.messagesender.Annotation.Sms">
+            <attribute key="dummy" value="true"/>
+        </qualifier>
     </bean>
 
     <bean id="emailMessageSender" class="com.nhnacademy.edu.springframework.messagesender.service.EmailMessageSender">
     </bean>
 
-<!--    <bean id="messageService" class="com.nhnacademy.edu.springframework.messagesender.service.MessageService">-->
-<!--    </bean>-->
+    <bean id="messageService" class="com.nhnacademy.edu.springframework.messagesender.service.MessageService">
+    </bean>
 </beans>
