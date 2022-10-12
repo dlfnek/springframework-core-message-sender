@@ -8,18 +8,21 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
+@PropertySource("classpath:/api.properties")
 public class ServiceConfig {
 
     @Autowired
     private MainConfig mainConfig;
+    @Value("${from}")
+    private String name;
 
     @Bean
     public MessageService messageService1() {
-        return new MessageService(mainConfig.smsMessageSender());
+        return new MessageService(mainConfig.smsMessageSender(), name);
     }
 
     @Bean
     public MessageService messageService2() {
-        return new MessageService(mainConfig.emailMessageSender());
+        return new MessageService(mainConfig.emailMessageSender(), name);
     }
 }

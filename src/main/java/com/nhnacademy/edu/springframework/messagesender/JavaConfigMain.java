@@ -2,10 +2,7 @@ package com.nhnacademy.edu.springframework.messagesender;
 
 import com.nhnacademy.edu.springframework.messagesender.config.MainConfig;
 import com.nhnacademy.edu.springframework.messagesender.config.ServiceConfig;
-import com.nhnacademy.edu.springframework.messagesender.service.EmailMessageSender;
-import com.nhnacademy.edu.springframework.messagesender.service.MessageSender;
 import com.nhnacademy.edu.springframework.messagesender.service.MessageService;
-import com.nhnacademy.edu.springframework.messagesender.service.SmsMessageSender;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class JavaConfigMain {
