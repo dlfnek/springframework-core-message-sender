@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-        default-init-method="init"
-        default-destroy-method="destroy">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd"
+       default-init-method="init"
+       default-destroy-method="destroy">
 
+    <!-- annotation설정을 위해 추가-->
+    <context:annotation-config/>
+
+    <!-- @Required 애너테이션 사용을 위해 추가 -->
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />
 
     <bean id="smsMessageSender" class="com.nhnacademy.edu.springframework.messagesender.service.SmsMessageSender">
     </bean>
@@ -13,17 +19,6 @@
     <bean id="emailMessageSender" class="com.nhnacademy.edu.springframework.messagesender.service.EmailMessageSender">
     </bean>
 
-<!--    스프링 빈끼리만 조립해주는 역할-->
-<!--    <bean id="messageSendService" class="com.nhnacademy.edu.springframework.messagesender.service.MessageSendService">-->
-<!--        <constructor-arg ref="smsMessageSender" />-->
-<!--        <constructor-arg ref="emailMessageSender" />-->
+<!--    <bean id="messageService" class="com.nhnacademy.edu.springframework.messagesender.service.MessageService">-->
 <!--    </bean>-->
-
-<!--    <bean id="messageSetterService" class="com.nhnacademy.edu.springframework.messagesender.service.MessageSetterService">-->
-<!--        <property name="smsMessageSender" ref="smsMessageSender" />-->
-<!--        <property name="emailMessageSender" ref="emailMessageSender" />-->
-<!--    </bean>-->
-
-    <bean id="messageSetterService" class="com.nhnacademy.edu.springframework.messagesender.service.MessageSetterService" autowire="byName">
-    </bean>
 </beans>
