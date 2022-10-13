@@ -6,9 +6,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class AnnoMain {
 
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-
-        MessageService service = context.getBean("messageService", MessageService.class);
-        service.doSendMessage();
+//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+//
+//        MessageService service = context.getBean("messageService", MessageService.class);
+//        service.doSendMessage();
     }
 }

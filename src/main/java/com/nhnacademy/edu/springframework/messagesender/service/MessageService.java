@@ -1,6 +1,7 @@
 package com.nhnacademy.edu.springframework.messagesender.service;
 
 import com.nhnacademy.edu.springframework.messagesender.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MessageService {
 
+    @Autowired
     private final MessageSender messageSender;
 
     @Value("${from}")
@@ -17,8 +19,8 @@ public class MessageService {
         this.messageSender = messageSender;
     }
 
-    public void doSendMessage() {
+    public void doSendMessage(MessageSender sender) {
         System.out.println(name);
-        messageSender.sendMessage(new User("sample@email.com", "010-1010-1010"), "메세지");
+        sender.sendMessage(new User("sample@email.com", "010-1010-1010"), "메세지");
     }
 }

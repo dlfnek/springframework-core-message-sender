@@ -3,7 +3,7 @@ package com.nhnacademy.edu.springframework.messagesender.service;
 import com.nhnacademy.edu.springframework.messagesender.User;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("smsMessageSender")
 public class SmsMessageSender implements MessageSender {
 
     public SmsMessageSender() {
