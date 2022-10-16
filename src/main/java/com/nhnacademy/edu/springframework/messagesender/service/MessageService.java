@@ -19,8 +19,13 @@ public class MessageService {
         this.messageSender = messageSender;
     }
 
-    public void doSendMessage(MessageSender sender) {
-        System.out.println(name);
-        sender.sendMessage(new User("sample@email.com", "010-1010-1010"), "메세지");
+//    public void doSendMessage() {
+//        System.out.println(name);
+//        messageSender.sendMessage(new User("sample@email.com", "010-1010-1010"), "메세지");
+//    }
+
+    public boolean doSendMessage() {
+        messageSender.sendMessage(new User("sample@email.com", "010-1010-1010"), "메세지");
+        return true;
     }
 }

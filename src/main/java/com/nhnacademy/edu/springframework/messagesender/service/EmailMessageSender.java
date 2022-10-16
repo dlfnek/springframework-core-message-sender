@@ -18,8 +18,14 @@ public class EmailMessageSender implements MessageSender {
         System.out.println("destroy method called in EmailMessageSender");
     }
 
+//    @Override
+//    public void sendMessage(User user, String message) {
+//        System.out.println("Email Message Sent " + user.getEmail() + " : " + message);
+//    }
+
     @Override
-    public void sendMessage(User user, String message) {
+    public boolean sendMessage(User user, String message) {
         System.out.println("Email Message Sent " + user.getEmail() + " : " + message);
+        return true;
     }
 }

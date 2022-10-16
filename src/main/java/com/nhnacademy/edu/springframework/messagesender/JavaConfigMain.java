@@ -12,8 +12,8 @@ public class JavaConfigMain {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MainConfig.class);
 
-        User user = new User("example@exam.com", "010-0101-0101");
-        String message = "this is me!";
+        User user = new User("신한국", "신한국");
+        String message = "기숙사 학식 맛있어요...";
         // cast 메서드를 이용하면, MessageSender로 타입캐스팅 해줌.
 
         // interface로 구현된 객체를 Join point로 설정할 경우, Proxy가 생성될 때, interface 객체로 생성이 됨.

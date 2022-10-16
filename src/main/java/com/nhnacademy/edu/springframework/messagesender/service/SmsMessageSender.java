@@ -18,8 +18,14 @@ public class SmsMessageSender implements MessageSender {
         System.out.println("destroy method called in SmsMessageSender");
     }
 
+//    @Override
+//    public void sendMessage(User user, String message) {
+//        System.out.println("SMS Message Sent to " + user.getPhoneNumber() + " : " + message);
+//    }
+
     @Override
-    public void sendMessage(User user, String message) {
+    public boolean sendMessage(User user, String message) {
         System.out.println("SMS Message Sent to " + user.getPhoneNumber() + " : " + message);
+        return true;
     }
 }
